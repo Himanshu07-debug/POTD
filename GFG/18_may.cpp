@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+ #include<bits/stdc++.h>
 
 #include <ext/pb_ds/assoc_container.hpp> 
 #include <ext/pb_ds/tree_policy.hpp> 
@@ -24,5 +24,21 @@ struct node{
     }
 
 };
+ 
+int findPeakElement(vector<int>& a) 
+{
+    // Code here
+    int l = 0, r = a.size()-1;
 
-// priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+    while(l < r){
+
+        int m = (l + r + 1)/2;
+
+        if(a[m] > a[m-1]) l = m;
+        else r = m - 1;
+
+    }
+
+    return a[l];
+    
+}

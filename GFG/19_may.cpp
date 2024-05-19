@@ -26,3 +26,22 @@ struct node{
 };
 
 // priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+
+int findClosest( int n, int k,int arr[]) 
+{ 
+    // Complete the function
+    int l = 0, r = n-1;
+
+    while(l < r){
+
+        int m = (l + r + 1)/2;
+
+        if(arr[m] <= k) l = m;
+        else r = m-1;
+
+    }
+
+    if(l + 1 < n && (k - arr[l]) >= (arr[l+1] - k)) return arr[l+1];
+    else return arr[l];
+
+}

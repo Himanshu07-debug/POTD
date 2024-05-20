@@ -27,30 +27,22 @@ struct node{
 
 // priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
 
+long long int PowMod(long long int x,long long int n,long long int M)
+{
+    // Code here
 
-int subsetXORSum(vector<int>& nums) {
+    long long res = 1;
 
-    int n = nums.size();
+    while(n > 0){
 
-    int x = pow(2, n) - 1;
-
-    int res = 0;
-
-    for(int i=1;i<=x;i++){
-
-        int y = i;
-        int ans = 0;
-        int indx = n-1;
-
-        while(y > 0){
-            if(y&1) ans ^= nums[indx];
-            indx--;
-            y = y >> 1;
+        if(n&1){
+            res = (res * x%M)%M;
         }
 
-        res += ans;
+        x = (x * x%M)%M;
 
-    }
+        n = n >> 1;
+    } 
 
     return res;
 

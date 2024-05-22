@@ -28,30 +28,3 @@ struct node{
 // priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
 
 
-int subsetXORSum(vector<int>& nums) {
-
-    int n = nums.size();
-
-    int x = pow(2, n) - 1;
-
-    int res = 0;
-
-    for(int i=1;i<=x;i++){
-
-        int y = i;
-        int ans = 0;
-        int indx = n-1;
-
-        while(y > 0){
-            if(y&1) ans ^= nums[indx];
-            indx--;
-            y = y >> 1;
-        }
-
-        res += ans;
-
-    }
-
-    return res;
-
-}

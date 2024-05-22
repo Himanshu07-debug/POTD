@@ -64,4 +64,3 @@ double findSmallestMaxDist(vector<int> &arr, int k) {
         
 }
 
-

@@ -27,31 +27,6 @@ struct node{
 
 // priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
 
-int longestSubseq(int n, vector<int> &arr) {
-
-
-    vector<int> dp(n, 1);
-
-    int mx = 0;
-
-    for(int i=1;i<n;i++){
-
-        for(int j=0;j<i;j++){
-
-            if(abs(arr[i] - arr[j]) == 1){
-                dp[i] = max(dp[i], dp[j] + 1);
-            }
-
-        }
-
-        mx = max(mx, dp[i]);
-
-    }
-
-    return mx;
-        
-}
-
 int pre(vector<int> &arr, int m){
 
     int c = 0;

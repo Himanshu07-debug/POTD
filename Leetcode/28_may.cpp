@@ -27,3 +27,29 @@ struct node{
 
 // priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
 
+int equalSubstring(string s, string t, int x) {
+
+    int n = s.size();
+
+    int sum = 0, res = 0;
+
+    int i=0, j = 0;
+
+    while(j < n){
+
+        sum += abs(s[j] - t[j]);
+
+        while(i <= j && sum > x){
+            sum -= abs(s[i] - t[i]);
+            i++;
+        }
+
+        res = max(res, j - i + 1);
+
+        j++;
+
+    }
+
+    return res;
+        
+}

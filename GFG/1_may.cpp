@@ -27,3 +27,23 @@ struct node{
 
 // priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
 
+string oddEven(string s) {
+
+    int x = 0, y = 0;
+
+    int cnt[26] = {0};
+
+    for(char c : s) cnt[c - 'a']++;
+
+    for(int i=0;i<26;i++){
+        if(cnt[i] > 0){
+            if((i&1) && !(cnt[i]&1)) x++;
+            else if(!(i&1) && (cnt[i]&1)) y++;
+        }
+        
+    }
+
+    if((x + y)&1) return "ODD";
+    else return "EVEN";
+
+}

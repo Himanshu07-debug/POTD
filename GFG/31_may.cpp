@@ -27,3 +27,39 @@ struct node{
 
 // priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
 
+int swapNibbles(int n) {
+        // code here
+
+    int c = 0;
+    int ans = 0;
+
+    while(n > 0){
+
+        if(n & 1){
+
+            if(c < 4){
+                ans += 16*(1<<c);
+            }
+            else{
+                ans += (1 << c)/16;
+            }
+
+        }
+
+        c++;
+
+        n /= 2;
+
+        
+    }
+
+    return ans;
+    
+}
+
+// O(1) --------------->>>
+
+// int v1 = (n >> 4);
+// int v2 = (n&15)*16;
+
+// return v1 + v2;

@@ -27,28 +27,16 @@ struct node{
 
 // priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
 
-bool checkSubarraySum(vector<int>& arr, int k) {
+ int findExtra(int n, int arr1[], int arr2[]) {
 
-    int sum = 0;
+    // add code here.
+    for(int i=0;i<n-1;i++){
 
-    unordered_map<int,int> mp;
-
-    for(int i=0;i<arr.size();i++){
-
-        sum += arr[i];
-
-        if(sum%k == 0 && i > 0) return true;
-
-        if(mp.find(sum%k) != mp.end()){
-            if(i - mp[sum%k] > 1){
-                return true;
-            }
-        }   
-        else{
-            mp[sum%k] = i;
-        }
+        if(arr1[i] != arr2[i]) return i;
 
     }
-    
-    return false;
+
+    return n-1;
+
+
 }

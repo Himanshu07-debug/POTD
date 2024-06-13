@@ -26,3 +26,21 @@ struct node{
 };
 
 // priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+
+int padovanSequence(int n) {
+        // code here.
+        if(n <= 2) return 1;
+        
+        int mod = 1e9 + 7;
+        
+        int a = 1, b = 1, c = 1;
+        
+        for(int i=3;i<=n;i++){
+           int d = (a + b)%mod;
+           a = b;
+           b = c;
+           c = d;
+        }
+        
+        return c;
+}

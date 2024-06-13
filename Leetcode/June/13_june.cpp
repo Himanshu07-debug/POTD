@@ -26,3 +26,20 @@ struct node{
 };
 
 // priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+
+int minMovesToSeat(vector<int>& arr, vector<int>& brr) {
+
+    sort(arr.begin(), arr.end());
+    sort(brr.begin(), brr.end());
+
+    int ans = 0;
+
+    for(int i=0;i<arr.size();i++){
+
+        ans += abs(arr[i] - brr[i]);
+
+    }
+
+    return ans;
+        
+}

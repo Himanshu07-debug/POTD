@@ -26,3 +26,10 @@ struct node{
 };
 
 // priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
+
+ string doIntersect(int p1[], int q1[], int p2[], int q2[]) {
+        // code here
+
+        
+
+    }

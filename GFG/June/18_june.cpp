@@ -27,3 +27,24 @@ struct node{
 
 // priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
 
+int rectanglesInCircle(int r) {
+        // code here
+    double area;
+    double diagonal;
+
+    int cnt=0;
+
+    for(int i=1;i<=2*r;i++)
+    {
+        for(int j=1;j<=2*r;j++)
+        {
+            diagonal=sqrt(i*i+j*j);
+            if(diagonal<=(2*r)){
+                cnt++;
+        }
+    }
+}
+
+    return cnt;
+    
+}

@@ -27,3 +27,28 @@ struct node{
 
 // priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> pq;
 
+int numberOfSubarrays(vector<int>& nums, int k) {
+
+    int n = nums.size();
+
+    int odd = 0, cnt = 0;
+
+    unordered_map<int,int> mp;
+
+    for(int i=0;i<n;i++){
+
+        if(nums[i]&1) odd++;
+
+        if(odd == k) cnt++;
+
+        if(mp.count(odd - k)){
+            cnt += mp[odd - k];
+        }
+        
+        mp[odd]++;
+
+    }
+
+    return cnt;
+
+}

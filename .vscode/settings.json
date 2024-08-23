@@ -2,7 +2,7 @@
     "files.associations": {
         "*.py": "python",
         "any": "cpp",
-        "array": "cpp",
+        "aray": "cpp",
         "atomic": "cpp",
         "barrier": "cpp",
         "bit": "cpp",

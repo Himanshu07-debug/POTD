@@ -1,0 +1,29 @@
+vector<int> nextLargerElement(vector<int>& arr) {
+    // code here
+    stack<int> stk;
+    vector<int> ans;
+    
+    for(int i = arr.size() - 1; i >= 0;i--)
+    {
+         
+         while(!stk.empty() && stk.top() <= arr[i])
+         {
+              stk.pop();
+         }
+        
+         if(stk.empty())
+         {
+             ans.push_back(-1);
+             stk.push(arr[i]);
+             continue;
+         }
+         
+         ans.push_back(stk.top());
+         stk.push(arr[i]);
+         
+    }
+    
+    reverse(ans.begin() , ans.end());
+    
+    return ans;
+}
